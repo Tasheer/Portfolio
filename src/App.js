@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Home from './pages/home';
+import Nft from './pages/nft';
+import Sozo from './pages/sozo';
+import Bitcoin from './pages/bitcoin';
+import Streaming from './pages/streaming';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+        <Router>
+
+
+          <Routes>
+            <Route path='/' element={<Home />}/>
+            <Route path='/nft-trading-site' element={<Nft />} />
+            <Route path='/sozo-finance' element={<Sozo />} />
+            <Route path='bitcoin-Wallet' element={<Bitcoin />} />
+            <Route path='/streaming-platform' element={<Streaming />} />
+          </Routes>
+
+        </Router>
+
     </div>
   );
 }
